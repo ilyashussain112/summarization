@@ -2,3 +2,7 @@ youtube_transcript_api
 transformers
 torch
 kokoro
+langchain-groq
+soundfile
+langchain
+groq
