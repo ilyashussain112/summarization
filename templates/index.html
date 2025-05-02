@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Summary Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Summary Generator</h1>
+        <form method="POST">
+            <label for="url">YouTube Video URL:</label>
+            <input type="text" id="url" name="url" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if summary %}
+            <div class="summary-box">
+                <h2>Summary:</h2>
+                <p>{{ summary }}</p>
+                <p><strong>Audio saved as:</strong> output_audio_0.wav, output_audio_1.wav</p>
+
+                <!-- Audio player for the generated audio files -->
+                <div>
+                    <h3>Audio:</h3>
+                    <audio controls>
+                        <source src="{{ url_for('static', filename='output_audio_0.wav') }}" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <audio controls>
+                        <source src="{{ url_for('static', filename='output_audio_1.wav') }}" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- Button to trigger audio play -->
+                <button onclick="playAudio()">Play Summary Audio</button>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Correctly embed Flask's URL into the JavaScript code
+        function playAudio() {
+            var audio = new Audio("{{ url_for('static', filename='output_audio_0.wav') }}");
+            audio.play();
+        }
+    </script>
+</body>
+</html>

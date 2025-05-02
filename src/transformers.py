@@ -1,7 +1,6 @@
 
 import torch
 from transformers import pipeline
-from torch.nn.utils import weight_norm
 
 
 whisper = pipeline("automatic-speech-recognition", "openai/whisper-large-v3", torch_dtype=torch.float16, device="cuda:0")

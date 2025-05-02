@@ -3,7 +3,7 @@ from src.api import get_transcript
 from pipeline.model import model2
 from pipeline.tts import tts
 
-url = "https://www.youtube.com/watch?v=Vqfy4ScRXFQ"
+url = input("Enter youtube video link:  ")
 id = preprocessing(url)
 text = get_transcript(id)
 
