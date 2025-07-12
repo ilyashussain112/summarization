@@ -1,3 +1,5 @@
+# This code is part of a project that generates text-to-speech audio from summaries.
+# It uses the Kokoro library for TTS generation and Flask for the web interface.
 from kokoro import KPipeline
 from IPython.display import display, Audio
 import soundfile as sf

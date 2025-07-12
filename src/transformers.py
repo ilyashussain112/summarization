@@ -1,3 +1,5 @@
+#import os
+#os.environ["CUDA_VISIBLE_DEVICES"] = "0"s
 import torch
 from transformers import pipeline
 

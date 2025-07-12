@@ -1,3 +1,5 @@
+# This code is part of a project that processes YouTube video transcripts and generates audio files from them.
+# It uses Flask for the web interface and the YouTube Transcript API to fetch transcripts.
 from youtube_transcript_api import YouTubeTranscriptApi
 from urllib.parse import urlparse, parse_qs
 from gtts import gTTS
